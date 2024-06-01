@@ -11,9 +11,7 @@
 
                     <Title text="{product>/appName}" titleStyle="H1" class="sapUiMediumMarginTop" />
                     <Button press="onPress"  text="{i18n>buttonText}" class="sapUiMediumMarginBottom sapUiMediumMarginTop" />
-                    <HBox>   
-                            <Image src="/img/oso_logo.png"/>
-                    </HBox>
+
                 </VBox>
             </VBox>
         </f:content>
