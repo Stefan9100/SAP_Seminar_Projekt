@@ -1,0 +1,84 @@
+{
+	"_version": "1.58.0",
+	"sap.app": {
+		"id": "ui5.walkthrough",
+		"type": "application",
+		"title": "Eine App",
+		"applicationVersion": {
+			"version": "0.0.1"
+		},
+	
+
+	"dataSources": {
+		"productData": {
+		  "uri": "models/products.json",
+		  "type": "JSON"
+		},
+		"oDataService": {
+			"uri": "/sap/opu/odata/sap/ZOSO_PURCHASEORDER/",
+			"type": "OData"
+		}
+	}
+	},
+	"sap.ui5": {
+		"models": {
+			"product": {
+			  "type": "sap.ui.model.json.JSONModel",
+			  "dataSource": "productData"
+			},
+			"oData": {
+				"dataSource": "oDataService"
+			}
+	  
+		  },
+
+		"routing": {
+			"config": {
+			  "routerClass": "sap.m.routing.Router",
+			  "viewType": "XML",
+			  "async": true,
+			  "viewPath": "ui5.walkthrough.view",
+			  "controlAggregation": "pages",
+			  "controlId": "app",
+			  "clearControlAggregation": false
+			},
+			"routes": [
+			  {
+				"name": "StartScreenView",
+				"pattern": "",
+				"target": [
+				  "StartScreenView"
+				]
+			  },
+			  {
+				"name": "RouteHomeView",
+				"pattern": "home",
+				"target": [
+				  "TargetHomeView"
+				]
+			  }
+			],
+			"targets": {
+			  "StartScreenView": {
+				"viewType": "XML",
+				"transition": "slide",
+				"clearControlAggregation": false,
+				"viewId": "StartScreen",
+				"viewName": "StartScreen"
+			  },
+			  "TargetHomeView": {
+				"viewType": "XML",
+				"transition": "slide",
+				"clearControlAggregation": false,
+				"viewId": "Home",
+				"viewName": "Home"
+			  }
+			}
+		},
+		"rootView":
+		{
+			"viewName": "ui5.walkthrough.view.App",
+			"type": "XML"
+		}
+	}
+}

@@ -1,0 +1,67 @@
+<mvc:View controllerName="ui5.walkthrough.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+	height="100%">
+    <f:DynamicPage id="page">
+            <f:header>
+				<f:DynamicPageHeader>
+					<f:content>
+                        <SearchField
+                        id="searchField"
+                        tooltip="Filter Products"
+                        width="auto">
+                        </SearchField>
+					</f:content>
+				</f:DynamicPageHeader>
+            </f:header>
+
+        <f:content>
+            <Table id="productTable" 
+                    mode="MultiSelect" 
+                    sticky="HeaderToolbar"
+                    items="{oData>/A_PurchaseOrder}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Button icon="sap-icon://nav-back" press="onPressNavBack" type="Ghost" class="sapUiTinyMarginEnd" />
+                        <Title text="Products" level="H2"/>
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://add" type="Emphasized" />
+                        <Button icon="sap-icon://edit" type="Ghost" />
+                        <Button icon="sap-icon://delete" type="Reject" press="onDelete"/>
+                        <Button icon="sap-icon://download" type="Ghost" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Product name"/>
+                    </Column>
+                    <Column>
+                        <Text text="Quantity"/>
+                    </Column>
+                    <Column>
+                        <Text text="Urgency"/>
+                    </Column>
+                    <Column>
+                        <Text text="Comment"/>
+                    </Column>
+                    <Column>
+                        <Text text="Created by"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{oData>PurchaseOrder}"/>
+                            <Text text="{oData>CompanyCode}"/>
+                            <Text text="{oData>PaymentTerms}"/>
+                            <Text text="{oData>ExchangeRate}"/>
+                            <Text text="{oData>AddressName}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>      
+    </f:DynamicPage>
+</mvc:View>
