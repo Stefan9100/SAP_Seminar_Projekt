@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.StartScreen"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+    <SplitApp
+    id="overviewSplitApp"
+    initialDetail="detail"
+    initialMaster="master"
+    >
+    <masterPages>
+        <Page
+				id="master"
+				title="Bestellungsübersicht"
+				backgroundDesign= "List">
+                <subHeader>
+                    <OverflowToolbar>
+                        <SearchField liveChange=".onSearch" width="100%" />
+                    </OverflowToolbar>
+                </subHeader>
+				<List
+                id="PurchaseOrderList"
+                items="{oData>/A_PurchaseOrder}"
+                mode="SingleSelectMaster"
+                includeItemInSelection="true">
+                <CustomListItem>
+                    <HBox>
+                        <VBox width="70%">
+                            <Text text="{oData>AddressName}" />
+                            <Text text="{oData>CreatedByUser}" />
+                        </VBox>
+                        <VBox width="30%" alignItems="End">
+                            <Text text="{oData>feed.entry.title}" />
+                            <Text text="{oData>DocumentCurrency}" />
+                            <Text text="{oData>LastChangeDateTime}" />
+                            
+                        </VBox>
+                    </HBox>
+                </CustomListItem>
+					
+				</List>
+			</Page>
+    </masterPages>
+    </SplitApp>
+</mvc:View>

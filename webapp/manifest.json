@@ -3,7 +3,7 @@
 	"sap.app": {
 		"id": "ui5.walkthrough",
 		"type": "application",
-		"title": "Eine App",
+		"title": "Purchase Order System",
 		"applicationVersion": {
 			"version": "0.0.1"
 		},
@@ -56,6 +56,13 @@
 				"target": [
 				  "TargetHomeView"
 				]
+			  },
+			  {
+				"name": "RouteOverviewView",
+				"pattern": "overview",
+				"target": [
+				  "TargetOverviewView"
+				]
 			  }
 			],
 			"targets": {
@@ -72,6 +79,13 @@
 				"clearControlAggregation": false,
 				"viewId": "Home",
 				"viewName": "Home"
+			  },
+			  "TargetOverviewView": {
+				"viewType": "XML",
+				"transition": "slide",
+				"clearControlAggregation": false,
+				"viewId": "Overview",
+				"viewName": "Overview"
 			  }
 			}
 		},

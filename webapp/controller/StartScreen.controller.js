@@ -19,6 +19,9 @@ sap.ui.define([
 
         onPress: function() {
             UIComponent.getRouterFor(this).navTo("RouteHomeView");
+        },
+        onPress2: function() {
+            UIComponent.getRouterFor(this).navTo("RouteOverviewView");
         }
 
     });

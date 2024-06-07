@@ -11,6 +11,7 @@
 
                     <Title text="{product>/appName}" titleStyle="H1" class="sapUiMediumMarginTop" />
                     <Button press="onPress"  text="{i18n>buttonText}" class="sapUiMediumMarginBottom sapUiMediumMarginTop" />
+                        <Button press="onPress2"  text="Overview" class="sapUiMediumMarginBottom sapUiMediumMarginTop" />
 
                 </VBox>
             </VBox>
